@@ -15,5 +15,7 @@
     "start": "npx live-server --open=demo",
     "postversion": "git push --follow-tags"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "highlight.js": "^9.16.2"
+  }
 }
