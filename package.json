@@ -11,6 +11,8 @@
   ],
   "repository": "https://github.com/vanillawc/wc-demo/",
   "main": "src/wc-demo.js",
-  "scripts": {},
+  "scripts": {
+    "start": "npx live-server --open=demo"
+  },
   "devDependencies": {}
 }
