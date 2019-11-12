@@ -1,0 +1,16 @@
+{
+  "name": "@vanillawc/wc-demo",
+  "version": "0.0.0",
+  "license": "MIT",
+  "author": "Evan Plaice <evanplaice@gmail.com> (http://evanplaice.com/)",
+  "description": "A vanilla web component to demo vanilla web components",
+  "keywords": [
+    "web-component",
+    "vanilla",
+    "demo"
+  ],
+  "repository": "https://github.com/vanillawc/wc-demo/",
+  "main": "src/wc-demo.js",
+  "scripts": {},
+  "devDependencies": {}
+}
