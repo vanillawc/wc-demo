@@ -17,6 +17,6 @@
     "postversion": "git push --follow-tags"
   },
   "devDependencies": {
-    "highlight.js": "^9.16.2"
+    "prism-es6": "^1.2.0"
   }
 }
