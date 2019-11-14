@@ -4,4 +4,4 @@ export default {
     file: 'dist/wc-demo.js',
     format: 'esm'
   }
-}
+};

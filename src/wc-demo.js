@@ -1,7 +1,6 @@
+/* eslint no-undef: 0 */
 import Prism from '../node_modules/prism-es6/prism.js';
-
 const favicon = 'iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAA3QAAAN0BcFOiBwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAASzSURBVFiF7ZdPbNRFFMc/b3a7pbSFSCLFSMWutBpliyIniURNiMSDCZAaI8oWNRITraHFfxdtTExU3CpcTBqFbPkTAyqJFxMveEDiwQhmLRKQ7mIFFYwkhbKl2988D78/O7vdmDQm9sJc9jdv3pvv931n5s2spHOZCaCe2WnXzCyCA9SbWQQH4DqBePA7CYwH382OHaAEXAm+64G5VXNc+pexIui3IOcRuRHV1UCj6xAq8HU21bcgm+pboMiXroPCnnBM0KeqAP6M4pS3KuNkz2RCb8mmtq3JpvrS2WW9j5R0shXYO00BRdtDg2DzIJGDiOQjtiJnPC0Hi0qh3KGjbNdsNtW7GRHHG/Z3vn4J1U3pnzIJkMciBQRJPnC4Px4g5t0gsYyU6U6NuGMq9myZKGESf5QaEj3V4E5GakqJFwiWNVyCusUL593qz2oLFQGqEeiuO169DFx0GJR9NVBA5aN97T1jABtP75yXzmV2pHOZI+lcZsfTJ99tBti9ouci6F6XAHFPOwCMqVQgbmJ5gK6jAw2B6UyEaeQswHPfvzMfaAGIIdEaxydKnwE9wCqgxyvFv+rX/gDTHKogYMXfB3XF5gIQyjf+8bKXLnQdOBBrbNTlfoLlJTFWCwDF+oQvv1DY1bl1BGDz8PaHgDVUtlUjJ5rW+8GcqyBg8CUcXLnlKnAhMOcR0YaO3xZpTNumKRDzFYhF8nMsSsgz66nRxJNn0rn3d2H1GDjnXZF2xy8PtKB+tka0VaHVz5oRDQ6JnfIKoXq+qbxfEO6tRQBhrXvKIgWU8jFCCffBiJ+ptqnKYn9MQgUu7ln+8ngwaQeAqpx3oBbWJFDVIgICrd35/jlBpxD85gPQpChLAKxGe6B8BIMlMCJXnblvmBEBwHhjjUsBJADWUAFIIiQBhpZvPQ8UK44gfg2wQtEnrALMnykBxMT8iazJA8SMv6aCJIE2VCUoMAWCIvRs7sOWMpit8ycSBa7NmADq1wIb0wKgwZEENAk0dp/Y3hJ4joYVc9JMlcu4insZ/T1jAmE5vcbYryi/D67ccrVruD8B3AwgNpYMCJ0T6y+TsVK+A2DBfyIQ7uaDd/VPqsh3AI0ydwkQA/Dw9wHKuejIOZeQ9ZcqbL/URBROKfJFbQKKI6c9AuBZkyzbIoDR8SvmLIBVcW5Svd35PlyTgPL5UKp3g8LjQLH6RbRo4+md8wDEcATAqJOV6G0AVswPB+/rLQZAHU78iii+lPgUuFw1/yR4nwCotYeBxLQnWbw42Q6QmGg+HphcWZMAo3+NHQcILpalbnhdsfQwBDee6vOAF+Wu+lo29coZABGzDohNIyDGtAMMrtxS8qMcBdQn8M2D/VMAoz83tQJz3Hg1vBh+Zzu37VOPO1WkW4xZke3c9kGEIzwBlW8/fwKLKymCTUa1W7ip6+hAQyi/51X6BiTv35QbWDeU6j0EMHR33ynglOvSPTywVq2uhlqvYtH2KkOb22mab6O+FVPlG/LUwU3DmXtqjXWfeK9dre6OfNO5TPXT6aQobwCooQElWzX+tig/Aig8ifBoLSDgikDGeuyfM9WUn4iPL5SYbgDexKkXtQj8r23W/5hcJ/APEB3A7cL0B6gAAAAASUVORK5CYII=';
-
 const template = document.createElement('template');
 template.innerHTML = `
 <style>
@@ -13,61 +12,61 @@ template.innerHTML = `
 
 code[class*="language-"],
 pre[class*="language-"] {
-	color: #f8f8f2;
-	background: none;
-	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-	font-size: 1em;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	word-wrap: normal;
-	line-height: 1.5;
+  color: #f8f8f2;
+  background: none;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 1em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
 
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
 
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
 }
 
 /* Code blocks */
 pre[class*="language-"] {
-	padding: 1em;
-	margin: .5em 0;
-	overflow: auto;
-	border-radius: 0.3em;
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+  border-radius: 0.3em;
 }
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	background: #272822;
+  background: #272822;
 }
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-	padding: .1em;
-	border-radius: .3em;
-	white-space: normal;
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
 }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: slategray;
+  color: slategray;
 }
 
 .token.punctuation {
-	color: #f8f8f2;
+  color: #f8f8f2;
 }
 
 .namespace {
-	opacity: .7;
+  opacity: .7;
 }
 
 .token.property,
@@ -75,12 +74,12 @@ pre[class*="language-"] {
 .token.constant,
 .token.symbol,
 .token.deleted {
-	color: #f92672;
+  color: #f92672;
 }
 
 .token.boolean,
 .token.number {
-	color: #ae81ff;
+  color: #ae81ff;
 }
 
 .token.selector,
@@ -89,7 +88,7 @@ pre[class*="language-"] {
 .token.char,
 .token.builtin,
 .token.inserted {
-	color: #a6e22e;
+  color: #a6e22e;
 }
 
 .token.operator,
@@ -98,35 +97,35 @@ pre[class*="language-"] {
 .language-css .token.string,
 .style .token.string,
 .token.variable {
-	color: #f8f8f2;
+  color: #f8f8f2;
 }
 
 .token.atrule,
 .token.attr-value,
 .token.function,
 .token.class-name {
-	color: #e6db74;
+  color: #e6db74;
 }
 
 .token.keyword {
-	color: #66d9ef;
+  color: #66d9ef;
 }
 
 .token.regex,
 .token.important {
-	color: #fd971f;
+  color: #fd971f;
 }
 
 .token.important,
 .token.bold {
-	font-weight: bold;
+  font-weight: bold;
 }
 .token.italic {
-	font-style: italic;
+  font-style: italic;
 }
 
 .token.entity {
-	cursor: help;
+  cursor: help;
 }
 
 /* WCDemo styling */
@@ -237,26 +236,25 @@ code {
 `;
 
 export class WCDemo extends HTMLElement {
-
-  static get observedAttributes() {
+  static get observedAttributes () {
     return ['src'];
   }
 
-  attributeChangedCallback(name, oldValue, newValue) {
+  attributeChangedCallback (name, oldValue, newValue) {
     if (oldValue !== newValue) {
       this[name] = newValue;
     }
   }
 
-  get src() { return this.getAttribute('src'); }
-  set src(value) {
+  get src () { return this.getAttribute('src'); }
+  set src (value) {
     this.setAttribute('src', value);
     this.fetch(value);
   }
 
-  constructor() {
+  constructor () {
     super();
-    this.attachShadow({mode: 'open'});
+    this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(document.importNode(template.content, true));
     this.shadowRoot.appendChild(document.createElement('div'));
     this.addFavicon();
@@ -266,20 +264,20 @@ export class WCDemo extends HTMLElement {
     this.outputElement = this.shadowRoot.getElementById('output');
   }
 
-  addFavicon() {
+  addFavicon () {
     var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
     link.rel = 'shortcut icon';
-    link.href = 'data:image/png;base64,'+favicon;
+    link.href = 'data:image/png;base64,' + favicon;
     document.getElementsByTagName('head')[0].appendChild(link);
   }
 
-  async connectedCallback() {
+  async connectedCallback () {
     this.setTitle();
     this.setLink();
     this.loadDemo();
   }
 
-  setTitle() {
+  setTitle () {
     if (this.hasAttribute('title')) {
       const title = this.getAttribute('title');
       this.titleElement.innerText = title;
@@ -287,13 +285,13 @@ export class WCDemo extends HTMLElement {
     }
   }
 
-  setLink() {
+  setLink () {
     if (this.hasAttribute('link')) {
       this.linkElement.href = this.getAttribute('link');
     }
   }
 
-  async loadDemo() {
+  async loadDemo () {
     if (this.hasAttribute('src')) {
       this.source = await this.fetch(this.src);
       let escapedSource = this.source;
@@ -305,12 +303,11 @@ export class WCDemo extends HTMLElement {
     }
   }
 
-  async fetch(src) {
+  async fetch (src) {
     // fetch the external markdown source
     const response = await fetch(src);
-    return await response.text();
+    return response.text();
   }
-
 }
 
 customElements.define('wc-demo', WCDemo);
