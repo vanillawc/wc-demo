@@ -17,6 +17,7 @@
     "lint": "semistandard",
     "build": "npx rollup --config rollup.config.js ",
     "package": "npx rimraf package && npm pack | tail -n 1 | xargs tar -xf",
+    "preversion": "npm run lint",
     "postversion": "git push --follow-tags"
   },
   "devDependencies": {
