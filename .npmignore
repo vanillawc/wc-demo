@@ -1,0 +1,4 @@
+demo/
+dev/
+rollup.config.js
+*.tgz
