@@ -220,7 +220,7 @@ code {
 
 <div id="header">
   <h1 id="title"></h1>
-  <div><a id="link">GitHub</a></div>
+  <h1><a id="link">GitHub</a></h1>
 </div>
 <div id="container">
   <section id="content">
@@ -274,14 +274,26 @@ export class WCDemo extends HTMLElement {
   }
 
   async connectedCallback() {
-    if (this.hasAttribute('title')) {
-      this.titleElement.innerText = this.getAttribute('title');
-    }
+    this.setTitle();
+    this.setLink();
+    this.loadDemo();
+  }
 
+  setTitle() {
+    if (this.hasAttribute('title')) {
+      const title = this.getAttribute('title');
+      this.titleElement.innerText = title;
+      document.title = title;
+    }
+  }
+
+  setLink() {
     if (this.hasAttribute('link')) {
       this.linkElement.href = this.getAttribute('link');
     }
+  }
 
+  async loadDemo() {
     if (this.hasAttribute('src')) {
       this.source = await this.fetch(this.src);
       let escapedSource = this.source;
