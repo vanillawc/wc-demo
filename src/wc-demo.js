@@ -1,6 +1,5 @@
 /* eslint no-undef: 0 */
 import Prism from '../node_modules/prism-es6/prism.js';
-const favicon = 'iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAA3QAAAN0BcFOiBwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAASzSURBVFiF7ZdPbNRFFMc/b3a7pbSFSCLFSMWutBpliyIniURNiMSDCZAaI8oWNRITraHFfxdtTExU3CpcTBqFbPkTAyqJFxMveEDiwQhmLRKQ7mIFFYwkhbKl2988D78/O7vdmDQm9sJc9jdv3pvv931n5s2spHOZCaCe2WnXzCyCA9SbWQQH4DqBePA7CYwH382OHaAEXAm+64G5VXNc+pexIui3IOcRuRHV1UCj6xAq8HU21bcgm+pboMiXroPCnnBM0KeqAP6M4pS3KuNkz2RCb8mmtq3JpvrS2WW9j5R0shXYO00BRdtDg2DzIJGDiOQjtiJnPC0Hi0qh3KGjbNdsNtW7GRHHG/Z3vn4J1U3pnzIJkMciBQRJPnC4Px4g5t0gsYyU6U6NuGMq9myZKGESf5QaEj3V4E5GakqJFwiWNVyCusUL593qz2oLFQGqEeiuO169DFx0GJR9NVBA5aN97T1jABtP75yXzmV2pHOZI+lcZsfTJ99tBti9ouci6F6XAHFPOwCMqVQgbmJ5gK6jAw2B6UyEaeQswHPfvzMfaAGIIdEaxydKnwE9wCqgxyvFv+rX/gDTHKogYMXfB3XF5gIQyjf+8bKXLnQdOBBrbNTlfoLlJTFWCwDF+oQvv1DY1bl1BGDz8PaHgDVUtlUjJ5rW+8GcqyBg8CUcXLnlKnAhMOcR0YaO3xZpTNumKRDzFYhF8nMsSsgz66nRxJNn0rn3d2H1GDjnXZF2xy8PtKB+tka0VaHVz5oRDQ6JnfIKoXq+qbxfEO6tRQBhrXvKIgWU8jFCCffBiJ+ptqnKYn9MQgUu7ln+8ngwaQeAqpx3oBbWJFDVIgICrd35/jlBpxD85gPQpChLAKxGe6B8BIMlMCJXnblvmBEBwHhjjUsBJADWUAFIIiQBhpZvPQ8UK44gfg2wQtEnrALMnykBxMT8iazJA8SMv6aCJIE2VCUoMAWCIvRs7sOWMpit8ycSBa7NmADq1wIb0wKgwZEENAk0dp/Y3hJ4joYVc9JMlcu4insZ/T1jAmE5vcbYryi/D67ccrVruD8B3AwgNpYMCJ0T6y+TsVK+A2DBfyIQ7uaDd/VPqsh3AI0ydwkQA/Dw9wHKuejIOZeQ9ZcqbL/URBROKfJFbQKKI6c9AuBZkyzbIoDR8SvmLIBVcW5Svd35PlyTgPL5UKp3g8LjQLH6RbRo4+md8wDEcATAqJOV6G0AVswPB+/rLQZAHU78iii+lPgUuFw1/yR4nwCotYeBxLQnWbw42Q6QmGg+HphcWZMAo3+NHQcILpalbnhdsfQwBDee6vOAF+Wu+lo29coZABGzDohNIyDGtAMMrtxS8qMcBdQn8M2D/VMAoz83tQJz3Hg1vBh+Zzu37VOPO1WkW4xZke3c9kGEIzwBlW8/fwKLKymCTUa1W7ip6+hAQyi/51X6BiTv35QbWDeU6j0EMHR33ynglOvSPTywVq2uhlqvYtH2KkOb22mab6O+FVPlG/LUwU3DmXtqjXWfeK9dre6OfNO5TPXT6aQobwCooQElWzX+tig/Aig8ifBoLSDgikDGeuyfM9WUn4iPL5SYbgDexKkXtQj8r23W/5hcJ/APEB3A7cL0B6gAAAAASUVORK5CYII=';
 const template = document.createElement('template');
 template.innerHTML = `
 <style>
@@ -224,7 +223,7 @@ code {
 <div id="container">
   <section id="content">
     <h2>Description</h2>
-    <p><slot></slot></p>
+    <p id="description"></p>
     <hr>
     <h2>Usage</h2>
     <pre><code id="source" class="language-html"></code></pre>
@@ -252,42 +251,45 @@ export class WCDemo extends HTMLElement {
     this.fetch(value);
   }
 
+  get desc() { return this.getAttribute('desc'); }
+  set desc(value) {
+    this.setAttribute('desc', value)
+  }
+
   constructor () {
     super();
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(document.importNode(template.content, true));
     this.shadowRoot.appendChild(document.createElement('div'));
-    this.addFavicon();
     this.titleElement = this.shadowRoot.getElementById('title');
     this.linkElement = this.shadowRoot.getElementById('link');
+    this.descElement = this.shadowRoot.getElementById('description');
     this.sourceElement = this.shadowRoot.getElementById('source');
     this.outputElement = this.shadowRoot.getElementById('output');
-  }
-
-  addFavicon () {
-    var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
-    link.rel = 'shortcut icon';
-    link.href = 'data:image/png;base64,' + favicon;
-    document.getElementsByTagName('head')[0].appendChild(link);
   }
 
   async connectedCallback () {
     this.setTitle();
     this.setLink();
+    this.setDescription();
     this.loadDemo();
   }
 
   setTitle () {
     if (this.hasAttribute('title')) {
-      const title = this.getAttribute('title');
-      this.titleElement.innerText = title;
-      document.title = title;
+      this.titleElement.innerText = this.getAttribute('title');
     }
   }
 
   setLink () {
     if (this.hasAttribute('link')) {
       this.linkElement.href = this.getAttribute('link');
+    }
+  }
+
+  setDescription() {
+    if (this.hasAttribute('desc')) {
+      this.descElement.innerText = this.getAttribute('desc');
     }
   }
 
@@ -304,7 +306,6 @@ export class WCDemo extends HTMLElement {
   }
 
   async fetch (src) {
-    // fetch the external markdown source
     const response = await fetch(src);
     return response.text();
   }
