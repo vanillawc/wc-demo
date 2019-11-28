@@ -1,4 +1,4 @@
-<h1>wc-demo</h1>
+<h1>WC-Demo</h1>
 
 [![GitHub Releases](https://img.shields.io/github/release/vanillawc/wc-demo.svg)](https://github.com/vanillawc/wc-demo/releases)
 [![NPM](https://badgen.net/npm/v/@vanillawc/wc-demo)](https://www.npmjs.com/package/@vanillawc/wc-demo)
@@ -26,21 +26,15 @@ npm i @vanillawc/wc-demo
 ## Usage
 
 Attributes
-- src - path to the demo source file
 - title - the demo title
 - link - link to the demo's GitHub repo
-
-Properties
-- innerHTML - the demo's description
-
-
-
-
+- desc - the demo's description
+- src - path to the demo source file
 
 ### Load an external Markdown file using the `src` attribute
 
 ```html
-<wc-demo src="assets/demo.html" title="WC-Demo" link="https:/github.com/vanillawc/wc-demo">Basic Usage</wc-demo>
+<wc-demo title="WC-Demo" link="https:/github.com/vanillawc/wc-demo" desc="Basic Usage" src="assets/demo.html"></wc-demo>
 ```
 
 ***Demo: [wc-demo][]***
