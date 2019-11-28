@@ -1,134 +1,8 @@
 /* eslint no-undef: 0 */
-import Prism from '../node_modules/prism-es6/prism.js';
+import './source-element.js';
 const template = document.createElement('template');
 template.innerHTML = `
 <style>
-/**
- * okaidia theme for JavaScript, CSS and HTML
- * Loosely based on Monokai textmate theme by http://www.monokai.nl/
- * @author ocodia
- */
-
-code[class*="language-"],
-pre[class*="language-"] {
-  color: #f8f8f2;
-  background: none;
-  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  font-size: 1em;
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
-  line-height: 1.5;
-
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
-
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none;
-}
-
-/* Code blocks */
-pre[class*="language-"] {
-  padding: 1em;
-  margin: .5em 0;
-  overflow: auto;
-  border-radius: 0.3em;
-}
-
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-  background: #272822;
-}
-
-/* Inline code */
-:not(pre) > code[class*="language-"] {
-  padding: .1em;
-  border-radius: .3em;
-  white-space: normal;
-}
-
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-  color: slategray;
-}
-
-.token.punctuation {
-  color: #f8f8f2;
-}
-
-.namespace {
-  opacity: .7;
-}
-
-.token.property,
-.token.tag,
-.token.constant,
-.token.symbol,
-.token.deleted {
-  color: #f92672;
-}
-
-.token.boolean,
-.token.number {
-  color: #ae81ff;
-}
-
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-  color: #a6e22e;
-}
-
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string,
-.token.variable {
-  color: #f8f8f2;
-}
-
-.token.atrule,
-.token.attr-value,
-.token.function,
-.token.class-name {
-  color: #e6db74;
-}
-
-.token.keyword {
-  color: #66d9ef;
-}
-
-.token.regex,
-.token.important {
-  color: #fd971f;
-}
-
-.token.important,
-.token.bold {
-  font-weight: bold;
-}
-.token.italic {
-  font-style: italic;
-}
-
-.token.entity {
-  cursor: help;
-}
-
-/* WCDemo styling */
-
 @import url('https://fonts.googleapis.com/css?family=Lato|Roboto|Source+Code+Pro');
 
 body {
@@ -226,7 +100,7 @@ code {
     <p id="description"></p>
     <hr>
     <h2>Usage</h2>
-    <pre><code id="source" class="language-html"></code></pre>
+    <source-element id="source"></source-element>
     <hr />
     <h2>Output</h2>
     <div id="output"></div>
@@ -236,7 +110,7 @@ code {
 
 export class WCDemo extends HTMLElement {
   static get observedAttributes () {
-    return ['src'];
+    return ['title', 'link', 'desc', 'src'];
   }
 
   attributeChangedCallback (name, oldValue, newValue) {
@@ -245,34 +119,45 @@ export class WCDemo extends HTMLElement {
     }
   }
 
+  get title () { return this.getAttribute('title'); }
+  set title (value) {
+    this.setAttribute('title', value);
+    this.setTitle();
+  }
+
+  get link () { return this.getAttribute('link'); }
+  set link (value) {
+    this.setAttribute('link', value);
+    this.setLink();
+  }
+
+  get desc () { return this.getAttribute('desc'); }
+  set desc (value) {
+    this.setAttribute('desc', value);
+    this.setDescription();
+  }
+
   get src () { return this.getAttribute('src'); }
   set src (value) {
     this.setAttribute('src', value);
-    this.fetch(value);
-  }
-
-  get desc() { return this.getAttribute('desc'); }
-  set desc(value) {
-    this.setAttribute('desc', value)
+    this.setSrc(value);
   }
 
   constructor () {
     super();
-    this.attachShadow({ mode: 'open' });
-    this.shadowRoot.appendChild(document.importNode(template.content, true));
-    this.shadowRoot.appendChild(document.createElement('div'));
-    this.titleElement = this.shadowRoot.getElementById('title');
-    this.linkElement = this.shadowRoot.getElementById('link');
-    this.descElement = this.shadowRoot.getElementById('description');
-    this.sourceElement = this.shadowRoot.getElementById('source');
-    this.outputElement = this.shadowRoot.getElementById('output');
+    this.appendChild(template.content.cloneNode(true));
+    this.titleElement = this.querySelector('#title');
+    this.linkElement = this.querySelector('#link');
+    this.descElement = this.querySelector('#description');
+    this.sourceElement = this.querySelector('#source');
+    this.outputElement = this.querySelector('#output');
   }
 
   async connectedCallback () {
     this.setTitle();
     this.setLink();
     this.setDescription();
-    this.loadDemo();
+    this.setSrc();
   }
 
   setTitle () {
@@ -287,20 +172,16 @@ export class WCDemo extends HTMLElement {
     }
   }
 
-  setDescription() {
+  setDescription () {
     if (this.hasAttribute('desc')) {
       this.descElement.innerText = this.getAttribute('desc');
     }
   }
 
-  async loadDemo () {
+  async setSrc () {
     if (this.hasAttribute('src')) {
       this.source = await this.fetch(this.src);
-      let escapedSource = this.source;
-      escapedSource = escapedSource.replace(/</g, '&lt;');
-      escapedSource = escapedSource.replace(/>/g, '&gt;');
-      this.sourceElement.innerHTML = escapedSource;
-      Prism.highlightElement(this.sourceElement);
+      this.sourceElement.source = this.source;
       this.outputElement.innerHTML = this.source;
     }
   }
