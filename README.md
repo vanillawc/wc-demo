@@ -17,13 +17,14 @@ A vanilla web component to demo vanilla web components
 npm i @vanillawc/wc-demo
 ```
 
-*Note: To use this package, import the production bundle from `dist/wc-demo.js`*
+Then import the `index.js` file at the root of the package.
 
 -----
 
 ## Usage
 
 Attributes
+
 - title - the demo title
 - link - link to the demo's GitHub repo
 - desc - the demo's description
