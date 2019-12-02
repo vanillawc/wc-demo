@@ -182,7 +182,9 @@ export class WCDemo extends HTMLElement {
     if (this.hasAttribute('src')) {
       this.source = await this.fetch(this.src);
       this.sourceElement.source = this.source;
-      this.outputElement.innerHTML = this.source;
+      setTimeout(() => {
+        this.outputElement.innerHTML = this.source;
+      }, 1000);
     }
   }
 
