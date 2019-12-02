@@ -1,1 +1,1 @@
-export * from './src/wc-demo.js';
+export * from './dist/wc-demo.js';
