@@ -1,5 +1,3 @@
-<h1>WC-Demo</h1>
-
 [![GitHub Releases](https://img.shields.io/github/release/vanillawc/wc-demo.svg)](https://github.com/vanillawc/wc-demo/releases)
 [![NPM](https://badgen.net/npm/v/@vanillawc/wc-demo)](https://www.npmjs.com/package/@vanillawc/wc-demo)
 [![Downloads](https://badgen.net/npm/dt/@vanillawc/wc-demo)](https://www.npmjs.com/package/@vanillawc/wc-demo)
