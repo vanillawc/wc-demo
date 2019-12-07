@@ -1,0 +1,13 @@
+{
+  "name": "@vanillawc/wc-demo",
+  "authors": [
+    "Evan Plaice <evanplaice@gmail.com> (http://evanplaice.com/)"
+  ],
+  "keywords": [
+    "web-components",
+    "vanilla",
+    "demo"
+  ],
+  "license": "MIT",
+  "dependencies": {}
+}
