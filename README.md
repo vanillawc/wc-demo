@@ -1,9 +1,9 @@
 [![GitHub Releases](https://img.shields.io/github/release/vanillawc/wc-demo.svg)](https://github.com/vanillawc/wc-demo/releases)
-[![NPM](https://badgen.net/npm/v/@vanillawc/wc-demo)](https://www.npmjs.com/package/@vanillawc/wc-demo)
+[![NPM Release](https://badgen.net/npm/v/@vanillawc/wc-demo)](https://www.npmjs.com/package/@vanillawc/wc-demo)
 [![Downloads](https://badgen.net/npm/dt/@vanillawc/wc-demo)](https://www.npmjs.com/package/@vanillawc/wc-demo)
-[![Known Vulnerabilities](https://snyk.io/test/npm/@vanillawc/wc-demo/badge.svg)](https://snyk.io/test/npm/@vanillawc/wc-demo)
-[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/vanillawc/wc-demo/master/LICENSE)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/vanillawc/wc-demo/master/LICENSE)
 [![Published on WebComponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/@vanillawc/wc-demo)
+[![Latest Status](https://github.com/vanillawc/wc-demo/workflows/Latest/badge.svg)](https://github.com/vanillawc/wc-demo/actions)
 [![Release Status](https://github.com/vanillawc/wc-demo/workflows/Release/badge.svg)](https://github.com/vanillawc/wc-demo/actions)
 
 A vanilla web component to demo vanilla web components
