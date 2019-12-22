@@ -158,7 +158,7 @@ export class SourceElement extends HTMLElement {
         cursor: help;
       }
       </style>
-      <pre><code id="source" class="language-html"></code></pre>`
+      <pre><code id="source" class="language-html"></code></pre>`;
   }
 }
 

@@ -926,7 +926,7 @@ class SourceElement extends HTMLElement {
         cursor: help;
       }
       </style>
-      <pre><code id="source" class="language-html"></code></pre>`
+      <pre><code id="source" class="language-html"></code></pre>`;
   }
 }
 
@@ -990,7 +990,7 @@ class WCDemo extends HTMLElement {
     }
 
     if (this.hasAttribute('desc')) {
-    this.setDescription();
+      this.setDescription();
     }
 
     if (this.hasAttribute('title')) {

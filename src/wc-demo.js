@@ -57,7 +57,7 @@ export class WCDemo extends HTMLElement {
     }
 
     if (this.hasAttribute('desc')) {
-    this.setDescription();
+      this.setDescription();
     }
 
     if (this.hasAttribute('title')) {
