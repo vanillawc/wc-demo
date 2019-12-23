@@ -2,15 +2,15 @@
 import './source-element.js';
 
 export class WCDemo extends HTMLElement {
+  static get observedAttributes () {
+    return ['title', 'link', 'desc', 'src'];
+  }
+
   attributeChangedCallback (name, oldValue, newValue) {
     if (!this.__initialized) { return; }
     if (oldValue !== newValue) {
       this[name] = newValue;
     }
-  }
-
-  static get observedAttributes () {
-    return ['title', 'link', 'desc', 'src'];
   }
 
   get title () { return this.getAttribute('title'); }
@@ -40,7 +40,7 @@ export class WCDemo extends HTMLElement {
   constructor () {
     super();
     const template = document.createElement('template');
-    template.innerHTML = WCDemo.default();
+    template.innerHTML = WCDemo.template();
     this.appendChild(template.content.cloneNode(true));
 
     this.__initialized = null;
@@ -95,7 +95,7 @@ export class WCDemo extends HTMLElement {
     return response.text();
   }
 
-  static default () {
+  static template () {
     return `
       <style>
       @import url('https://fonts.googleapis.com/css?family=Lato|Roboto|Source+Code+Pro');
