@@ -37,14 +37,10 @@ Attributes
 <wc-demo title="WC-Demo" link="https:/github.com/vanillawc/wc-demo" desc="Basic Usage" src="assets/demo.html"></wc-demo>
 ```
 
-***Demo: [wc-demo][]***
+-----
 
-## Demos
+## Demo
 
-In addition to the link, the demo can be run locally with
+### [WC-Demo-Demo - WebComponents.dev](https://webcomponents.dev/edit/0nMBg8ZeCG1KHZmL49ww?sv=1&pm=1)
 
-```sh
-npm run start
-```
 
-[wc-demo]: https://vanillawc.github.io/wc-demo/demo/index.html
