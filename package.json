@@ -10,7 +10,7 @@
     "demo"
   ],
   "repository": "https://github.com/vanillawc/wc-demo/",
-  "main": "src/wc-demo.js",
+  "main": "index.js",
   "scripts": {
     "start": "npx live-server --no-browser --port=5500 --open=dev",
     "lint": "semistandard",
