@@ -2,7 +2,7 @@
   "name": "@vanillawc/wc-demo",
   "version": "1.1.15",
   "license": "MIT",
-  "author": "Evan Plaice <evanplaice@gmail.com> (http://evanplaice.com/)",
+  "author": "Evan Plaice <evanplaice@gmail.com> (https://evanplaice.com/)",
   "description": "A vanilla web component to demo vanilla web components",
   "keywords": [
     "web-components",
