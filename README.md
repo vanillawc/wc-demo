@@ -1,24 +1,35 @@
-[![GitHub Releases](https://badgen.net/github/tag/vanillawc/wc-demo)](https://github.com/vanillawc/wc-demo/releases)
-[![NPM Release](https://badgen.net/npm/v/@vanillawc/wc-demo)](https://www.npmjs.com/package/@vanillawc/wc-demo)
-[![Bundlephobia](https://badgen.net/bundlephobia/minzip/@vanillawc/wc-demo)](https://bundlephobia.com/result?p=@vanillawc/wc-demo)
-[![MIT License](https://badgen.net/github/license/vanillawc/wc-demo)](https://raw.githubusercontent.com/vanillawc/wc-demo/master/LICENSE)
-[![Published on WebComponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/vanillawc/wc-demo)
-[![Latest Status](https://github.com/vanillawc/wc-demo/workflows/Latest/badge.svg)](https://github.com/vanillawc/wc-demo/actions)
-[![Release Status](https://github.com/vanillawc/wc-demo/workflows/Release/badge.svg)](https://github.com/vanillawc/wc-demo/actions)
+<h1 align="center">&lt;wc-demo&gt;: A Component to Demo Components</h1>
 
-A vanilla web component to demo vanilla web components
-
------
+<div align="center">
+  <a href="https://github.com/vanillawc/wc-demo/releases"><img src="https://badgen.net/github/tag/vanillawc/wc-demo" alt="GitHub Releases"></a>
+  <a href="https://www.npmjs.com/package/@vanillawc/wc-demo"><img src="https://badgen.net/npm/v/@vanillawc/wc-demo" alt="NPM Releases"></a>
+  <a href="https://bundlephobia.com/result?p=@vanillawc/wc-demo"><img src="https://badgen.net/bundlephobia/minzip/@vanillawc/wc-demo" alt="Bundlephobia"></a>
+  <a href="https://raw.githubusercontent.com/vanillawc/wc-demo/master/LICENSE"><img src="https://badgen.net/github/license/vanillawc/wc-demo" alt="MIT License"></a>
+  <a href="https://www.webcomponents.org/element/vanillawc/wc-demo"><img src="https://img.shields.io/badge/webcomponents.org-published-blue.svg" alt="Published on WebComponents.org"></a>
+  <a href="https://github.com/vanillawc/wc-demo/actions"><img src="https://github.com/vanillawc/wc-demo/workflows/Latest/badge.svg" alt="Latest Status"></a>
+  <a href="https://github.com/vanillawc/wc-demo/actions"><img src="https://github.com/vanillawc/wc-demo/workflows/Release/badge.svg" alt="Release Status"></a>
+</div>
 
 ## Installation
 
+*Installation*
 ```sh
 npm i @vanillawc/wc-demo
 ```
 
-Then import the `index.js` file at the root of the package.
+*Import from NPM*
+```html
+<script type="module" src="node_modules/@vanillawc/wc-demo/index.js"></script>
+```
 
------
+*Import from CDN*
+```html
+<script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-demo/index.js"></script>
+```
+
+## Demo
+
+Try it on [WebComponents.dev](https://webcomponents.dev/edit/0nMBg8ZeCG1KHZmL49ww?sv=1&pm=1)
 
 ## Usage
 
@@ -34,11 +45,3 @@ Attributes
 ```html
 <wc-demo title="WC-Demo" link="https:/github.com/vanillawc/wc-demo" desc="Basic Usage" src="assets/demo.html"></wc-demo>
 ```
-
------
-
-## Demo
-
-### [WC-Demo-Demo - WebComponents.dev](https://webcomponents.dev/edit/0nMBg8ZeCG1KHZmL49ww?sv=1&pm=1)
-
-
