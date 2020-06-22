@@ -1,34 +1,34 @@
 /* eslint no-undef: 0 */
-import Prism from '../node_modules/prism-es6/prism.js';
+import Prism from '../node_modules/prism-es6/prism.js'
 
 export class SourceElement extends HTMLElement {
   attributeChangedCallback (name, oldValue, newValue) {
     if (oldValue !== newValue) {
-      this[name] = newValue;
+      this[name] = newValue
     }
   }
 
-  get source () { return this._source; }
+  get source () { return this._source }
   set source (value) {
-    this._source = value;
-    this.setSource();
+    this._source = value
+    this.setSource()
   }
 
   constructor () {
-    super();
-    const template = document.createElement('template');
-    template.innerHTML = SourceElement.default();
-    this.attachShadow({ mode: 'open' });
-    this.shadowRoot.appendChild(document.importNode(template.content, true));
-    this.sourceElement = this.shadowRoot.getElementById('source');
+    super()
+    const template = document.createElement('template')
+    template.innerHTML = SourceElement.default()
+    this.attachShadow({ mode: 'open' })
+    this.shadowRoot.appendChild(document.importNode(template.content, true))
+    this.sourceElement = this.shadowRoot.getElementById('source')
   }
 
   setSource () {
-    let escapedSource = this._source;
-    escapedSource = escapedSource.replace(/</g, '&lt;');
-    escapedSource = escapedSource.replace(/>/g, '&gt;');
-    this.sourceElement.innerHTML = escapedSource;
-    Prism.highlightElement(this.sourceElement);
+    let escapedSource = this._source
+    escapedSource = escapedSource.replace(/</g, '&lt;')
+    escapedSource = escapedSource.replace(/>/g, '&gt;')
+    this.sourceElement.innerHTML = escapedSource
+    Prism.highlightElement(this.sourceElement)
   }
 
   static default () {
@@ -158,8 +158,8 @@ export class SourceElement extends HTMLElement {
         cursor: help;
       }
       </style>
-      <pre><code id="source" class="language-html"></code></pre>`;
+      <pre><code id="source" class="language-html"></code></pre>`
   }
 }
 
-customElements.define('source-element', SourceElement);
+customElements.define('source-element', SourceElement)

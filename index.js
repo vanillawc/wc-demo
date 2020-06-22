@@ -776,7 +776,7 @@ class SourceElement extends HTMLElement {
     }
   }
 
-  get source () { return this._source; }
+  get source () { return this._source }
   set source (value) {
     this._source = value;
     this.setSource();
@@ -926,7 +926,7 @@ class SourceElement extends HTMLElement {
         cursor: help;
       }
       </style>
-      <pre><code id="source" class="language-html"></code></pre>`;
+      <pre><code id="source" class="language-html"></code></pre>`
   }
 }
 
@@ -936,35 +936,35 @@ customElements.define('source-element', SourceElement);
 
 class WCDemo extends HTMLElement {
   static get observedAttributes () {
-    return ['title', 'link', 'desc', 'src'];
+    return ['title', 'link', 'desc', 'src']
   }
 
   attributeChangedCallback (name, oldValue, newValue) {
-    if (!this.__initialized) { return; }
+    if (!this.__initialized) { return }
     if (oldValue !== newValue) {
       this[name] = newValue;
     }
   }
 
-  get title () { return this.getAttribute('title'); }
+  get title () { return this.getAttribute('title') }
   set title (value) {
     this.setAttribute('title', value);
     this.setTitle();
   }
 
-  get link () { return this.getAttribute('link'); }
+  get link () { return this.getAttribute('link') }
   set link (value) {
     this.setAttribute('link', value);
     this.setLink();
   }
 
-  get desc () { return this.getAttribute('desc'); }
+  get desc () { return this.getAttribute('desc') }
   set desc (value) {
     this.setAttribute('desc', value);
     this.setDescription();
   }
 
-  get src () { return this.getAttribute('src'); }
+  get src () { return this.getAttribute('src') }
   set src (value) {
     this.setAttribute('src', value);
     this.setSrc();
@@ -1025,7 +1025,7 @@ class WCDemo extends HTMLElement {
 
   async fetchSrc (src) {
     const response = await fetch(src);
-    return response.text();
+    return response.text()
   }
 
   static template () {
@@ -1134,7 +1134,7 @@ class WCDemo extends HTMLElement {
           <div id="output"></div>
         </section>
       </div>
-      `;
+      `
   }
 }
 

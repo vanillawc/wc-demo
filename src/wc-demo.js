@@ -1,98 +1,98 @@
 /* eslint no-undef: 0 */
-import './source-element.js';
+import './source-element.js'
 
 export class WCDemo extends HTMLElement {
   static get observedAttributes () {
-    return ['title', 'link', 'desc', 'src'];
+    return ['title', 'link', 'desc', 'src']
   }
 
   attributeChangedCallback (name, oldValue, newValue) {
-    if (!this.__initialized) { return; }
+    if (!this.__initialized) { return }
     if (oldValue !== newValue) {
-      this[name] = newValue;
+      this[name] = newValue
     }
   }
 
-  get title () { return this.getAttribute('title'); }
+  get title () { return this.getAttribute('title') }
   set title (value) {
-    this.setAttribute('title', value);
-    this.setTitle();
+    this.setAttribute('title', value)
+    this.setTitle()
   }
 
-  get link () { return this.getAttribute('link'); }
+  get link () { return this.getAttribute('link') }
   set link (value) {
-    this.setAttribute('link', value);
-    this.setLink();
+    this.setAttribute('link', value)
+    this.setLink()
   }
 
-  get desc () { return this.getAttribute('desc'); }
+  get desc () { return this.getAttribute('desc') }
   set desc (value) {
-    this.setAttribute('desc', value);
-    this.setDescription();
+    this.setAttribute('desc', value)
+    this.setDescription()
   }
 
-  get src () { return this.getAttribute('src'); }
+  get src () { return this.getAttribute('src') }
   set src (value) {
-    this.setAttribute('src', value);
-    this.setSrc();
+    this.setAttribute('src', value)
+    this.setSrc()
   }
 
   constructor () {
-    super();
-    const template = document.createElement('template');
-    template.innerHTML = WCDemo.template();
-    this.appendChild(template.content.cloneNode(true));
+    super()
+    const template = document.createElement('template')
+    template.innerHTML = WCDemo.template()
+    this.appendChild(template.content.cloneNode(true))
 
-    this.__initialized = null;
-    this.titleElement = this.querySelector('#title');
-    this.linkElement = this.querySelector('#link');
-    this.descElement = this.querySelector('#description');
-    this.sourceElement = this.querySelector('#source');
-    this.outputElement = this.querySelector('#output');
+    this.__initialized = null
+    this.titleElement = this.querySelector('#title')
+    this.linkElement = this.querySelector('#link')
+    this.descElement = this.querySelector('#description')
+    this.sourceElement = this.querySelector('#source')
+    this.outputElement = this.querySelector('#output')
   }
 
   async connectedCallback () {
     if (this.hasAttribute('link')) {
-      this.setLink();
+      this.setLink()
     }
 
     if (this.hasAttribute('desc')) {
-      this.setDescription();
+      this.setDescription()
     }
 
     if (this.hasAttribute('title')) {
-      this.setTitle();
+      this.setTitle()
     }
 
     if (this.hasAttribute('src')) {
-      this.setSrc();
+      this.setSrc()
     }
 
-    this.__initialized = true;
+    this.__initialized = true
   }
 
   setTitle () {
-    this.titleElement.innerText = this.getAttribute('title');
+    this.titleElement.innerText = this.getAttribute('title')
   }
 
   setLink () {
-    this.linkElement.href = this.getAttribute('link');
+    this.linkElement.href = this.getAttribute('link')
   }
 
   setDescription () {
-    this.descElement.innerText = this.getAttribute('desc');
+    this.descElement.innerText = this.getAttribute('desc')
   }
 
   async setSrc () {
-    const src = this.getAttribute('src');
-    this.source = await this.fetchSrc(src);
-    this.sourceElement.source = this.source;
-    this.outputElement.innerHTML = this.source;
+    const src = this.getAttribute('src')
+    this.source = await this.fetchSrc(src)
+    this.sourceElement.source = this.source
+    this.outputElement.innerHTML = this.source
   }
 
   async fetchSrc (src) {
-    const response = await fetch(src);
-    return response.text();
+    const response = await fetch(src)
+    return response.text()
   }
 
   static template () {
@@ -201,8 +201,8 @@ export class WCDemo extends HTMLElement {
           <div id="output"></div>
         </section>
       </div>
-      `;
+      `
   }
 }
 
-customElements.define('wc-demo', WCDemo);
+customElements.define('wc-demo', WCDemo)
