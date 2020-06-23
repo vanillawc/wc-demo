@@ -1,4 +1,4 @@
-<h1 align="center">&lt;wc-demo&gt;: A Component to Demo Components</h1>
+<h1 align="center">&lt;wc-demo&gt; A Component to Demo Components</h1>
 
 <div align="center">
   <a href="https://github.com/vanillawc/wc-demo/releases"><img src="https://badgen.net/github/tag/vanillawc/wc-demo" alt="GitHub Releases"></a>
